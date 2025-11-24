@@ -1,13 +1,3 @@
-stage('Verificar Python') {
-    steps {
-        sh 'python --version'
-    }
-}
-stage('Verificar Doxygen') {
-    steps {
-        sh 'doxygen --version'
-    }
-}
 pipeline {
     agent any
 
