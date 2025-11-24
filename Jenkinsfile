@@ -11,7 +11,7 @@ pipeline {
 
         stage('Ejecutar pruebas') {
             steps {
-                sh './venv/Scripts/python -m pytest test_app.py'
+                sh './venv/Bin/python -m pytest test_app.py'
             }
         }
 
