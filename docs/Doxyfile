@@ -1,0 +1,4 @@
+PROJECT_NAME = "Ejemplo Python Flask"
+OUTPUT_DIRECTORY = "docs"
+RECURSIVE = YES
+GENERATE_LATEX = NO
