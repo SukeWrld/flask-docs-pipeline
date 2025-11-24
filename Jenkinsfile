@@ -1,7 +1,29 @@
+stage('Verificar Python') {
+    steps {
+        sh 'python --version'
+    }
+}
+stage('Verificar Doxygen') {
+    steps {
+        sh 'doxygen --version'
+    }
+}
 pipeline {
     agent any
 
     stages {
+        stage('Verificar Python') {
+            steps {
+                sh 'python --version'
+            }
+        }
+
+        stage('Verificar Doxygen') {
+            steps {
+                sh 'doxygen --version'
+            }
+        }
+
         stage('Instalar dependencias') {
             steps {
                 sh 'python -m venv venv'
@@ -11,7 +33,7 @@ pipeline {
 
         stage('Ejecutar pruebas') {
             steps {
-                sh './venv/Bin/python -m pytest test_app.py'
+                sh './venv/Scripts/python -m pytest test_app.py'
             }
         }
 
