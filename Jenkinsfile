@@ -35,3 +35,5 @@ pipeline {
         }
     }
 }
+
+// Version final para Windows 
