@@ -4,35 +4,33 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'echo "Instalando dependencias (simulado)..."'
+                bat 'echo "Construyendo..."'
             }
         }
         
         stage('Test') {
             steps {
-                bat 'echo "Tests finalizados correctamente."'
+                bat 'echo "Testeando..."'
             }
         }
         
         stage('Generate Documentation') {
             steps {
-                // Si Doxygen está en el PATH, esto funcionará.
-                // Si vuelve a fallar, tendremos que poner la ruta completa (C:\Program Files\...)
-                bat 'doxygen Doxyfile' 
+                // Este comando usa Doxygen en Windows
+                bat 'doxygen Doxyfile'
             }
         }
         
         stage('Version Control') {
             steps {
-                echo 'Verificando documentación generada...'
-                // En Windows se usa 'dir' en lugar de 'ls'
+                // Verificamos que se creó la carpeta docs
                 bat 'dir docs'
             }
         }
         
         stage('Deploy') {
             steps {
-                bat 'echo "Despliegue en entorno de prueba completado."'
+                bat 'echo "Desplegando..."'
             }
         }
     }
